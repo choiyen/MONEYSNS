@@ -1,0 +1,382 @@
+:root {
+    /* color */
+    --color-white: #ffffff;
+    --color-red: #f00;
+    --color-orange: #ed6d00;
+    --color-yellow: #ffc300;
+    --color-bordergrey: rgba(255, 255, 255, 0.15);
+    --color-dark-white: #bdbdbd;
+    --color-black: #000000;
+    --color-beige: #fcae8f;
+    --color-blue: #006cb7;
+    /* size */
+    --font-biglogo: 40px;
+    --font-headermenu: 20px;
+    --font-hometext: 35px;
+    --font-basetext: 13px;
+    --font-txt: 60px;
+  
+    /* transition__druation */
+    --base-duration: 300ms;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    word-break: keep-all;
+    box-sizing: border-box;
+  }
+  
+  ul,
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  html {
+    font-size: 10px;
+  }
+  body {
+    font-family: "Gothic A1", sans-serif;
+  }
+  button {
+    border: none;
+    outline: none;
+  }
+  section {
+    width: 100%;
+    position: relative;
+    margin-bottom: 100px;
+  }
+  img {
+    border: none;
+  }
+  .wrap {
+    width: 100%;
+    background-color: var(--color-black);
+    overflow: hidden;
+  }
+  /* header */
+  
+  #header__wrap {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    background-color: var(--color-black);
+  }
+  .header__title {
+    font-family: "Orbitron", sans-serif;
+  }
+  #header__wrap a {
+    color: var(--color-white);
+  }
+  .header__top__wrap {
+    width: 100%;
+  }
+  .header__top {
+    max-width: 1200px;
+    height: 100px;
+    text-align: center;
+    margin: auto;
+    line-height: 100px;
+    font-size: var(--font-biglogo);
+    position: relative;
+  }
+  .menu__btn {
+    width: 50px;
+    height: 50px;
+    font-size: var(--font-biglogo);
+    background-color: transparent;
+    color: var(--color-white);
+    position: absolute;
+    right: 0;
+    top: 20px;
+    line-height: 50px;
+    display: none;
+  }
+  .header__bot__wrap {
+    width: 100%;
+    border-top: 1px solid var(--color-bordergrey);
+    border-bottom: 1px solid var(--color-bordergrey);
+  }
+  .header__bot {
+    max-width: 1200px;
+    margin: 15px auto;
+  }
+  .header__bot__container {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .login__wrap,
+  .logout__wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .login__wrap li,
+  .logout__wrap li {
+    width: 50%;
+    border: 1px solid var(--color-white);
+    text-align: center;
+    border-radius: 30px;
+    margin: auto 20px;
+  }
+  .login__wrap .sign
+  .logout__wrap .logout {
+    border: 1px solid var(--color-orange);
+    transition: var(--base-duration);
+  }
+  .sign__a,
+  .logout__a {
+    color: var(--color-orange);
+    transition: var(--base-duration);
+  }
+  .login__wrap a,
+  .logout__wrap a {
+    height: 100%;
+    font-size: var(--font-basetext);
+    display: block;
+    line-height: 32px;
+  }
+  .sign:hover,
+  .logout:hover {
+    background-color: var(--color-orange);
+  }
+  .sign:hover .sign__a,
+  .logout:hover .logout__a {
+    color: var(--color-white);
+  }
+  
+  .section__title__wrap {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+  .txt__harfline {
+    width: 100%;
+  }
+  .txt {
+    font-size: var(--font-txt);
+    color: var(--color-white);
+  }
+  .half-line {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+  .half-line::before {
+    display: inline-block;
+    content: "";
+    width: 100%;
+    background-color: var(--color-white);
+    height: 5px;
+  }
+  .section__titles {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .section__logo {
+    margin: 10px 50px;
+  }
+  .section__logo i {
+    color: var(--color-white);
+    padding: 0 14px;
+    transform: scale(1.7); /* 로고 사이즈  조절*/
+  }
+  .section__logo__title {
+    color: var(--color-dark-white);
+  }
+  .section__logo__title:hover {
+    color: var(--color-orange);
+  }
+  .section__logo.selected .section__logo__title{
+    color: var(--color-orange);
+  }
+
+  /* footer */
+  #footer__wrap {
+    background-color: var(--color-black);
+    margin-top: 100px;
+    position: relative;
+    z-index: 1;
+  }
+  .footer__container {
+    max-width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__titles {
+    display: inline-block; /* inline의 한줄에 줄 세우기 + block의 너비, 높이, 마진, 패딩 지정 기능 */
+  }
+  
+  .footer__logo {
+    display: flex;
+    align-items: center; /* flex 속성의 수직 정렬 */
+    font-size: var(--font-headermenu);
+  }
+  .footer__logo i {
+    color: var(--color-white);
+    padding: 0 14px;
+    transform: scale(1.5); /* 로고 사이즈  조절*/
+  }
+  .footer__logo__title {
+    color: var(--color-dark-white);
+  }
+  .footer__btns__wrap {
+    display: flex;
+    font-size: var(--font-basetext);
+    margin-top: 10px;
+  }
+  .footer__btns__wrap a {
+    color: var(--color-dark-white);
+  }
+  .footer__btns__wrap li {
+    display: inline-block;
+    position: relative;
+    padding: 0 8px;
+  }
+  .footer__btns__wrap li:first-child::before { /* 처음에는 구분선이 없으므로*/
+    display: none;
+  }
+  .footer__btns__wrap li::before { /* 구분선 넣기 */
+    display: inline-block;
+    content: "";
+    position: absolute;
+    width: 1px;
+    left: 0;
+    top: 0;
+    background-color: var(--color-dark-white);
+    vertical-align: middle;
+    height: 15px;
+  }
+  
+  .footer__info__wrap,
+  .footer__info__wrap a {
+    color: var(--color-dark-white);
+  }
+  .footer__info__wrap {
+    font-size: var(--font-basetext);
+    padding: 0 8px;
+    margin-top: 10px;
+  }
+  .footer__info__wrap li {
+    margin-bottom: 10px;
+  }
+  .icon__item__wrap {
+    display: flex;
+  }
+  .icon__item {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--color-dark-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 30%;
+    transition: var(--base-duration);
+  }
+  .icon__item i {
+    transition: var(--base-duration);
+    color: var(--color-white);
+    line-height: 48px;
+  }
+  .icon__item:last-child {
+    margin-right: 0;
+  }
+  .icon__item:hover {
+    transform: scale(1.2);
+    border: 1px solid var(--color-red);
+  }
+  .icon__item:hover i {
+    transform: rotateY(360deg);
+    color: var(--color-red);
+  }
+  .icon__item a {
+    font-size: var(--font-headermenu);
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 800px) {
+    :root {
+      /* color */
+      --color-white: #ffffff;
+      --color-red: #f00;
+      --color-orange: #ed6d00;
+      --color-yellow: #ffc300;
+      --color-bordergrey: rgba(255, 255, 255, 0.15);
+      --color-dark-white: #bdbdbd;
+      --color-black: #000000;
+      --color-beige: #fcae8f;
+      /* size */
+      --font-biglogo: 30px;
+      --font-headermenu: 15px;
+      --font-hometext: 18px;
+      --font-basetext: 13px;
+      --font-txt: 40px;
+  
+      /* transition__druation */
+      --base-duration: 300ms;
+    }
+    .header__title {
+      color: var(--color-white);
+    }
+    #header__wrap a {
+      color: var(--color-orange);
+      display: block;
+    }
+    .header__top__wrap {
+      border-bottom: 1px solid var(--color-bordergrey);
+    }
+    .header__bot__wrap {
+      display: none;
+    }
+    .header__bot__wrap.open {
+      display: block;
+      background-color: black;
+      height: 100vh;
+      position: relative;
+      z-index: 999;
+    }
+    .header__bot__container {
+      flex-direction: column;
+    }
+    .login__wrap {
+      width: 100%;
+    }
+    #header__wrap .login a {
+      color: var(--color-white);
+    }
+    .menu__btn {
+      display: block;
+    }
+    /* footer */
+    .footer__container {
+      height: 250px;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .footer__title__wrap {
+      width: 100%;
+      text-align: center;
+    }
+    .footer__logo {
+      margin-right: 15px;
+    }
+    .footer__btns__wrap > li::before {
+      display: none;
+    }
+    .footer__btns__wrap {
+      flex-direction: column;
+      justify-content: center;
+    }

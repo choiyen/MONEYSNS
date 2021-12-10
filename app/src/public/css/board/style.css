@@ -1,0 +1,210 @@
+:root {
+    /* color */
+    --color-white: #ffffff;
+    --color-red: #f00;
+    --color-orange: #ed6d00;
+    --color-yellow: #ffc300;
+    --color-bordergrey: rgba(255, 255, 255, 0.15);
+    --color-dark-white: #bdbdbd;
+    --color-black: #000000;
+    --color-beige: #fcae8f;
+    /* size */
+    --font-biglogo: 40px;
+    --font-headermenu: 20px;
+    --font-hometext: 35px;
+    --font-basetext: 13px;
+    --font-txt: 60px;
+  
+    /* transition__druation */
+    --base-duration: 300ms;
+}
+
+/* 사진, 영상 업로드 버튼 */
+#photo_upload,
+#video_upload,
+#question_upload {
+    display: block;
+    border-radius: 4px;
+    background-color: var(--color-beige);
+    border: none;
+    color: var(--color-white);
+    text-align: center;
+    font-size: 22px;
+    padding: 15px;
+    width: 180px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px auto;
+  }
+  
+  #photo_upload span,
+  #video_upload span,
+  #question_upload span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #photo_upload span:after,
+  #video_upload span:after,
+  #question_upload span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #photo_upload:hover span,
+  #video_upload:hover span,
+  #question_upload:hover span {
+    padding-right: 25px;
+  }
+  
+  #photo_upload:hover span:after,
+  #video_upload:hover span:after,
+  #question_upload:hober span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  button {
+
+    width : 300px;
+    height: 50px;
+
+    background-color: #f8585b;
+
+    border: none;
+
+    color:#fff;
+
+    padding: 15px 0;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: 15px;
+
+    margin: 4px;
+
+    cursor: pointer;
+    
+    border-radius:10px;
+}
+
+button :focus
+{
+    width : 300px;
+    height: 50px;
+    border: 2px solid #4285f4;
+    box-shadow: 0 0 8px 0 #4285f4;
+
+    background-color: #f8585b;
+
+    border: none;
+
+    color:#fff;
+
+    padding: 15px 0;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: 15px;
+
+    margin: 4px;
+
+    cursor: pointer;
+    
+    border-radius:10px;
+}
+
+button :disabled
+{
+    width : 300px;
+    height: 50px;
+    background-color: grey;
+    border: none;
+    color:#fff;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius:10px;
+}
+
+input[type=text] 
+{
+    width : 300px;
+    height: 50px;
+    background-color: gainsboro;
+    border: 1.5px solid #000000;
+    border-radius: 4px;
+    outline: none;
+    padding: 3px 3px 2px 7px;
+    box-sizing: border-box;
+    transition: 3s;
+}
+input[type=text]:focus 
+{
+    width: 300px;
+    border: 2px solid #4285f4;
+    box-shadow: 0 0 8px 0 #4285f4;
+}
+
+input[type=file] 
+{
+    width : 300px;
+    height: 50px;
+    background-color: gainsboro;
+    border: 1.5px solid #000000;
+    border-radius: 4px;
+    outline: none;
+    padding: 3px 3px 2px 7px;
+    box-sizing: border-box;
+    transition: 3s;
+}
+input[type=file]:focus 
+{
+    width: 300px;
+    border: 2px solid #4285f4;
+    box-shadow: 0 0 8px 0 #4285f4;
+}
+
+.bd-box{
+    width: 50%; height: 100%;
+    display: block;
+    padding : 20px 20px 20px 20px;
+    font-size: 22px;
+    color: white;
+    background-color: teal;
+    font-family: 'Noto Sans KR', sans-serif;  
+    border:15px solid transparent;
+    border-color: chartreuse crimson cyan yellow;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+textarea
+{
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+}

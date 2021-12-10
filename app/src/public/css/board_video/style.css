@@ -1,0 +1,62 @@
+:root {
+    /* color */
+    --color-white: #ffffff;
+    --color-red: #f00;
+    --color-orange: #ed6d00;
+    --color-yellow: #ffc300;
+    --color-bordergrey: rgba(255, 255, 255, 0.15);
+    --color-dark-white: #bdbdbd;
+    --color-black: #000000;
+    --color-beige: #fcae8f;
+    /* size */
+    --font-biglogo: 40px;
+    --font-headermenu: 20px;
+    --font-hometext: 35px;
+    --font-basetext: 13px;
+    --font-txt: 60px;
+  
+    /* transition__druation */
+    --base-duration: 300ms;
+}
+
+/* 영상 제목 */
+#nickname {
+    color: var(--color-white);
+    font-size: var(--font-hometext);
+    margin: 20px 0;
+    font-family: 'Black Han Sans', sans-serif;
+}
+/* 영상 좋아요 정보 */
+.video_like {
+    color: var(--color-white);
+    text-align: right;
+    font-size: var(--font-hometext); 
+}
+/* 좋아요 버튼 눌렀을때 동작들(밑에 4개) */
+.video_like .far {
+    display: inline;
+}
+.video_like .fas {
+    display: none;
+    color: var(--color-red);
+}
+/* 빈 하트 */
+.video_like.selected .far {
+    display: none;
+}
+/* 꽉찬 하트 */
+.video_like.selected .fas {
+    display: inline;
+}
+/* 영상을 올린사람의 닉네임 */
+#video_nickname {
+    color: var(--color-white);
+    font-size: var(--font-headermenu);
+    margin: 20px 0;
+    font-family: 'Black Han Sans', sans-serif;
+}
+/* 영상 소개 */
+#video_introduce {
+    color: var(--color-white);
+    font-size: var(--font-headermenu);
+}

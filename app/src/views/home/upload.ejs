@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/board/style.css" /> 
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src ="/js/home/login_logout.js" defer></script>
+        <script src ="/js/home/upload.js" defer></script>
+        <title>Document</title>
+    </head>
+    <body bgcolor="black">
+        <div class="bd-box">
+            <div id="img" style="display: none;">
+                <p><input id="file2" type="file" accept="image/*"></p>
+                <p><button id="plus_photo_btn">사진 추가</button></p>
+                <p><img id="pre_photo" width="300px" height="300px" src="#" alt="" style="display: none;"></p>
+            </div>
+
+            <div id="mp4" style="display: none;">
+                <p><input id="file1" type="file" accept="video/*"></p>
+                <p><button id="plus_video_btn">영상 추가</button></p>
+                <p><input id="file3" type="file" accept="image/*"></p>
+                <p><button id="plus_thumbnailphoto_btn" disabled="disabled">썸네일용 사진 추가</button></p>
+                <p><img id="video_photo" width="300px" height="300px" src="#" alt="" style="display: none;"></p>
+            </div>
+            
+            <p><input id="title" type="text" name="title" placeholder="제목"/></p>
+
+            <div id="question" style="display: none;">
+                <p><textarea id="description" name="description" cols="30" rows="10"></textarea></p>
+            </div>
+            <button id="button" disabled="disabled" style="width: 140px;">제출</button>
+            <button id="photo_video_cancel" onclick="location.href='/board'" style="width: 140px; display: none;">취소</button>
+            <button id="question_cancel" onclick="location.href='/question'" style="width: 140px; display: none;">취소</button>
+            
+        </div>
+    </body>
+</html>

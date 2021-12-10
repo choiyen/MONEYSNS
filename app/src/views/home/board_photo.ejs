@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/common/common.css" />
+        <link rel="stylesheet" href="/css/common/pc.css" />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gothic+A1&family=Orbitron&family=Oswald:wght@700&family=Quicksand:wght@500&display=swap"
+            rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+                    
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/58412d2786.js" crossorigin="anonymous"></script>
+        <script src ="/js/home/login_logout.js" defer></script>
+        <script src ="/js/home/board.js" defer></script>
+        <script src ="/js/home/comment.js" defer></script>
+        <title>Board_Photo</title>
+    </head>
+
+    <body bgcolor='black'>
+            <ul class="login__wrap" id="login__wrap"></ul>
+            <ul class="logout__wrap" id="logout__wrap"></ul>
+
+            <!-- Select Content -->
+            <section id="intro">
+                <div class="intro__container">
+                    <div class="intro__new__wrap">
+                        <div id="select__img">
+                            <input type="checkbox" id="popup">
+                            <label for="popup" class="imgs" style="display: none;"></label>
+                            <div style="overflow:auto;">
+                                <div>
+                                    <img id="photo" src="/uploads/photo/<%= title %><%= seq %>.png" alt=""/ >
+                                    <div>
+                                        <div id="nickname"><%= title %></div>
+                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                        <div id="modal">
+                                            <div id="modal_top_content">
+                                                <div id="photo_declaration"><button type="button">신고</button></div><hr>
+                                                <div id="photo_delete"><button id="Photo_delete" type="button" style="display: none;">삭제</button></div><hr id="Photo_delete_line" style="display: none;">
+                                                <div id="cancel"><button>취소</button></div>
+                                            </div>
+                                            <div class="modal_layer"></div>
+                                        </div><hr>
+
+                                        <div id="introduce" style="overflow:auto; width:95%; height:370px">
+                                            <% for(var i = comment_cnt - 1; i >= 0; i--){ %>
+                                                <div>
+                                                    <span id="upload_time">
+                                                        <% if(comment_time[i] < 1){ %>
+                                                            <%= Math.floor(comment_time[i] * 60) %>초 전 <!-- 1분 이하이므로 분으로 초로 수정 -->
+                                                        <% } else if(comment_time[i] >= 60 && comment_time[i] < 1440) { %>
+                                                            <%= Math.floor(comment_time[i] / 60) %>시간 전 <!-- 1시간이 지나서 분으로 시간으로 수정 -->
+                                                        <% } else if(comment_time[i] >= 1440) { %>
+                                                            <%= Math.floor(comment_time[i] / 60 / 24) %>일 전 <!-- 1일이 지나서 시간을 일로 수정 -->
+                                                        <% } else {%>
+                                                            <%= Math.floor(comment_time[i]) %>분 전
+                                                        <% } %>
+                                                        </span>
+
+                                                    <% if(comment_id[i] === id){ %> <!--댓글 작성자와 방문자가 같아야 수정 및 삭제 가능, id는 방문자의 id를 나타낸다-->
+                                                        <span><button id="comment__delete__btn" onclick="photocommentDelete(<%= comment_seq[i] %>)">
+                                                            삭제</button></span>
+                                                        <span><button id="comment__update__btn" onclick="photocommentUpdate(<%= comment_seq[i] %>)">
+                                                            수정</button></span>
+                                                    <% } %>
+                                                </div>
+                                                <div id="photo_nickname"><%= comment_nick[i] %>
+                                                    <span style="font-family: 'Raleway', sans-serif; font-size: 18px; margin-left: 5px;"> <%= comment_contents[i] %></span></div><br>
+                                            <% } %>                                          
+                                        </div>
+                                        <div class="second__line"><hr></div>
+                                        <div class="like">
+                                            <i class="far fa-heart"></i>
+                                            <i class="fas fa-heart"></i>
+                                            <div id="like_cnt" style="font-family: 'Black Han Sans', sans-serif; font-size: 28px;" name="<%= like_check %>", class="<%= id %>">좋아요 <%= like %>개</div>
+                                        </div>
+                                        <div class="three__line"><hr></div>
+                                        <div id="photo_comment">
+                                            <input id="comment" type="text" name="comment" placeholder="댓글을 입력하세요"/>
+                                            <button id="comment_button">댓글 작성</button>
+                                            <div id="comment_contents_title" class="<%= title %>" name="photo"></div>
+                                        </div>
+                                        <div id="for_like" name="<%= seq %>"></div>
+                                        <div id="video_nickname" name="<%= user_id %>"></div>
+                                        <div id="video_comment" class="hi"></div>
+                                    </div>
+                                    <% if(banner_check_point > 100){ %> 
+                                        <div id="photo__banner__wrap">
+                                            <div class="photo__banner__container">Banner Img</div>
+                                        </div>
+                                    <% } %>
+                                    <label for="popup" class="close" id="c1" value>X</label>
+                                </div>
+                                <label for="popup" class="close" id="c2" value></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </body>
+    </html>
